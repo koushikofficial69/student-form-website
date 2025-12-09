@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Graduate Student Study Habits Survey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f3f6fa;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+        .container {
+            width: 100%;
+            max-width: 650px;
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 18px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        label {
+            font-weight: 600;
+            margin-bottom: 6px;
+            display: block;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px 12px;
+            margin-bottom: 18px;
+            border: 1px solid #d0d7e2;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            background: #3b71f0;
+            color: #fff;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        button:hover {
+            background: #2f5fd3;
+        }
+        .success-message {
+            display: none;
+            background: #e6ffe9;
+            border-left: 4px solid #33b864;
+            padding: 12px 16px;
+            margin-top: 20px;
+            border-radius: 8px;
+            color: #267a40;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Graduate Student Study Habits & Well‑being Survey</h2>
+
+        <form id=\"dataForm\">
+
+            <h3>Basic Information</h3>
+
+            <label>Full Name:</label>
+            <input type=\"text\" name=\"student_name\" />
+
+            <label>University Name:</label>
+            <input type=\"text\" name=\"university_name\" />
+
+            <h3>Part A: Demographics & Grouping Variables</h3>
+
+            <label>1. What was your undergraduate major stream?</label>
+            <select name="undergrad_major">
+                <option value="STEM">STEM (Science, Technology, Engineering, Math)</option>
+                <option value="Non-STEM">Non-STEM (Arts, Humanities, Business, etc.)</option>
+            </select>
+
+            <label>2. What is your current employment status?</label>
+            <select name="employment">
+                <option value="Unemployed / Student only">Unemployed / Student only</option>
+                <option value="Employed">Employed (Part-time or Full-time)</option>
+            </select>
+
+            <label>3. Expenditure pattern (e.g., monthly spending on food, transport, study materials):</label>
+            <input type="text" name="expenditure" />
+
+            <label>4. Age:</label>
+            <input type="number" name="age" />
+
+            <label>5. Gender:</label>
+            <input type="text" name="gender" />
+
+            <h3>Part B: Academic Performance & Habits</h3>
+
+            <label>6. On average, how many hours do you self-study per week? (Exclude lecture time)</label>
+            <input type="number" name="study_hours" />
+
+            <label>7. How many classes have you missed/skipped this semester?</label>
+            <input type="number" name="missed_classes" />
+
+            <label>8. Score on most recent midterm exam (0–100):</label>
+            <input type="number" name="midterm_score" />
+
+            <label>9. Final Undergraduate GPA:</label>
+            <input type="text" name="gpa" />
+
+            <h3>Part C: Longitudinal / Paired Data</h3>
+
+            <label>10. Stress level at beginning of semester (1–10):</label>
+            <select name="stress_start">
+                <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+            </select>
+
+            <label>11. Current stress level (mid-semester) (1–10):</label>
+            <select name="stress_mid">
+                <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+            </select>
+
+            <h3>Part D: Health & Lifestyle Metrics</h3>
+
+            <label>12. Average hours of sleep per night:</label>
+            <input type="number" name="sleep_hours" />
+
+            <label>13. Sleep pattern:</label>
+            <input type="text" name="sleep_pattern" placeholder="e.g., 12am – 7am" />
+
+            <label>14. Cups of coffee/caffeinated beverages consumed per day:</label>
+            <input type="number" name="coffee" />
+
+            <label>15. Hours spent on internet per day (non-study purpose):</label>
+            <input type="number" name="internet_hours" />
+
+            <h3>Part E: Perspective About Your Business School</h3>
+
+            <label>16. I am satisfied with the teaching quality in my business school.</label>
+            <select name="q16">
+                <option>High</option><option>Moderate</option><option>Low</option>
+            </select>
+
+            <label>17. Academic resources sufficiently support my learning.</label>
+            <select name="q17">
+                <option>High</option><option>Moderate</option><option>Low</option>
+            </select>
+
+            <label>18. Administrative staff are helpful and responsive.</label>
+            <select name="q18">
+                <option>High</option><option>Moderate</option><option>Low</option>
+            </select>
+
+            <label>19. The school environment supports student well‑being.</label>
+            <select name="q19">
+                <option>High</option><option>Moderate</option><option>Low</option>
+            </select>
+
+            <label>20. I would recommend this business school to others.</label>
+            <select name="q20">
+                <option>High</option><option>Moderate</option><option>Low</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div class="success-message" id="successMessage">
+            Form submitted successfully!
+        </div>
+    </div>
+
+    <script>
+        const scriptURL = "https://script.google.com/macros/s/AKfycbxPvsEp0S3m2VsJc8GEdbtqm__p_N5ga5Bdo3MdH-CrTOWnHQqWcoicTVkOqFcj6PRj/exec";
+
+        document.getElementById("dataForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const jsonData = {};
+
+            formData.forEach((value, key) => {
+                jsonData[key] = value;
+            });
+
+            fetch(scriptURL, {
+                method: "POST",
+                body: JSON.stringify(jsonData)
+            })
+            .then(res => {
+                document.getElementById("successMessage").style.display = "block";
+                this.reset();
+            })
+            .catch(err => alert("Error submitting form"));
+        });
+    </script>
+
+</body>
+</html>
